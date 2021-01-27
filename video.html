@@ -41,6 +41,28 @@
             background-color: #ddd;
             color: black;
         }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            background-color: #ddd;
+            color: black;
+        } 
+
 	</style>
 </head>
 <body>
@@ -48,7 +70,7 @@
     <div class="topnav">
         <a href="index.html">Text</a>
         <a href="image.html">Image</a>
-        <a href="video.html">Video</a>
+        <a href="video.html"style="color:rgb(209, 209, 209);background-color:#080808">Video</a>
         <a href="table.html">Table</a>
     </div>
     <div class="wrapper">
@@ -64,5 +86,28 @@
 
       <iframe width="560" height="315" src="https://www.youtube.com/embed/Nx2qeKVtdz4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        var scrollTotal = document.body.scrollHeight - document.documentElement.clientHeight
+        function scrollFunction() {
+          if ((document.body.scrollTop/scrollTotal) > 0.25 || (document.documentElement.scrollTop/scrollTotal) > 0.25) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
 </html>
