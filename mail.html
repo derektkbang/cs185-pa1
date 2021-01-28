@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Images</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body{
+			background: rgb(41, 41, 41);
+            margin: 3%;
+			font-family: Arial, Helvetica, sans-serif
+		}
+		h2 {
+			color: rgb(255, 255, 255)
+		}
+        /* Style the top navigation bar */
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        form {color:white
+        }
+
+        button{color: black;
+        }
+        label{
+            color: rgb(255, 255, 255)
+        }
+        p{
+            color: rgb(255, 255, 255)
+        }   
+
+/* Style the topnav links */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+/* Change color on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }      
+
+
+	</style>
+</head>
+<body>
+    <h2>Graphic Design is my Passion</h2>
+    <div class="topnav">
+        <a href="index.html">Text</a>
+        <a href="image.html">Image</a>
+        <a href="video.html">Video</a>
+        <a href="table.html">Table</a>
+        <a href="mail.html"style="color:rgb(209, 209, 209);background-color:#080808">Email</a>
+    </div>
+    <br>
+
+    <label for="email">E-Mail Address:</label><br><br>
+    <input type="text" id="email" name="email">
+    <br><br>
+    <button onclick="check(document.getElementById('email').value)">Submit</button>
+    <p id="output"></p>
+    <script>
+        function check(str) {
+            var n = str.includes("@");
+            var o = str.endsWith(".edu")
+            var p = str.endsWith(".com")
+            if (n&&(o||p))
+  	            document.getElementById("output").innerHTML = "Email successfully recorded.";
+            else
+  	            document.getElementById("output").innerHTML = "Invalid email address.";
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+    </script>    
+</body>
+</html>
