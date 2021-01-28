@@ -20,6 +20,15 @@
         }
 
         form {color:white
+        }
+
+        button{color: black;
+        }
+        label{
+            color: rgb(255, 255, 255)
+        }
+        p{
+            color: rgb(255, 255, 255)
         }   
 
 /* Style the topnav links */
@@ -70,38 +79,28 @@
         <a href="table.html">Table</a>
         <a href="mail.html"style="color:rgb(209, 209, 209);background-color:#080808">Email</a>
     </div>
+    <br>
 
-    <form action="mail.html">
-        <br>
-        <label for="email">E-Mail Address:</label><br>
-        <input type="text" id="email" name="email"><br><br>
-        
-        <br><br>
-        <input type="submit" value="Submit">
-      </form>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <label for="email">E-Mail Address:</label><br><br>
+    <input type="text" id="email" name="email">
+    <br><br>
+    <button onclick="check(document.getElementById('email').value)">Submit</button>
+    <p id="output"></p>
     <script>
-        //Get the button
-        var mybutton = document.getElementById("myBtn");
-        
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        var scrollTotal = document.body.scrollHeight - document.documentElement.clientHeight
-        function scrollFunction() {
-          if ((document.body.scrollTop/scrollTotal) > 0.25 || (document.documentElement.scrollTop/scrollTotal) > 0.25) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
+        function check(str) {
+            var n = str.includes("@");
+            var o = str.endsWith(".edu")
+            var p = str.endsWith(".com")
+            if (n&&(o||p))
+  	            document.getElementById("output").innerHTML = "Email successfully recorded.";
+            else
+  	            document.getElementById("output").innerHTML = "Invalid email address.";
         }
-        
         // When the user clicks on the button, scroll to the top of the document
         function topFunction() {
           document.body.scrollTop = 0;
           document.documentElement.scrollTop = 0;
         }
-    </script>
-      
-      
+    </script>    
 </body>
 </html>

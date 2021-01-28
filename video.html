@@ -12,9 +12,39 @@
 
         }
 
+        .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color:rgba(43, 43, 43, 0.85);
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+  background-color: #fefefe;
+  opacity: 0.5;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+.mySlides{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 		body{
 			background: rgb(41, 41, 41);
-            margin: 20px;
+            margin: 3%;
 			font-family: Arial, Helvetica, sans-serif
 		}
 		h2 {
@@ -41,28 +71,48 @@
             background-color: #ddd;
             color: black;
         }
+        .row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
 
-        #myBtn {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 30px;
-            z-index: 99;
-            font-size: 18px;
-            border: none;
-            outline: none;
-            background-color: #333;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 4px;
-        }
+/* Create four equal columns that sits next to each other */
 
-        #myBtn:hover {
-            background-color: #ddd;
-            color: black;
-        } 
+.container {
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+}
 
+.column {
+  -ms-flex: 20%; /* IE10 */
+  flex: 20%;
+  max-width: 20%;
+  padding: 0 4px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1400px) {
+  .column {
+    -ms-flex: 25%;
+    flex: 25%;
+    max-width: 25%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .column {
+    -ms-flex: 33%;
+    flex: 33%;
+    max-width: 33%;
+  }
+}
 	</style>
 </head>
 <body>
@@ -72,42 +122,37 @@
         <a href="image.html">Image</a>
         <a href="video.html"style="color:rgb(209, 209, 209);background-color:#080808">Video</a>
         <a href="table.html">Table</a>
-    </div>
-    <div class="wrapper">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/AIJ4gKCdVE4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/vYmWK1FDhBE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Fk15H6PjBis" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/8KtyMcb86go" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/83m261lAlrs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Nx2qeKVtdz4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a href="mail.html">Email</a>
     </div>
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <div class="row"> 
+        <div class="column">
+            <iframe id="playVideo" src="https://www.youtube.com/embed/AIJ4gKCdVE4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="column">
+            <iframe id="playVideo" src="https://www.youtube.com/embed/Nx2qeKVtdz4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="column">
+            <iframe id="playVideo" src="https://www.youtube.com/embed/vYmWK1FDhBE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="column">
+            <iframe id="playVideo" src="https://www.youtube.com/embed/Fk15H6PjBis" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="column">
+            <iframe id="playVideo" src="https://www.youtube.com/embed/8KtyMcb86go" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="column">
+            <iframe id="playVideo" src="https://www.youtube.com/embed/83m261lAlrs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div> 
+
     <script>
-        //Get the button
-        var mybutton = document.getElementById("myBtn");
-        
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-        var scrollTotal = document.body.scrollHeight - document.documentElement.clientHeight
-        function scrollFunction() {
-          if ((document.body.scrollTop/scrollTotal) > 0.25 || (document.documentElement.scrollTop/scrollTotal) > 0.25) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
+        document.getElementById("playVideo").addEventListener("click", function(event){
+          event.preventDefault()
+        });
     </script>
+        
+
+
 </body>
 </html>
