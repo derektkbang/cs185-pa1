@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 
+* {
+   box-sizing: border-box;
+}
+h1 {
+   text-align: center;
+}
         .wrapper{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -42,15 +48,45 @@
             background-color: #ddd;
             color: black;
         }
-        .imagelist {
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
 
-            padding: 20px;
-        }
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 16.66%; /* IE10 */
+  flex: 16.66%;
+  max-width: 16.66%;
+  padding: 0 4px;
+}
 
-        .imagelist img {
-            margin: auto;
-            height: 200px;
-        }
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1400px) {
+  .column {
+    -ms-flex: 20%;
+    flex: 20%;
+    max-width: 20%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1000px) {
+  .column {
+    -ms-flex: 25%;
+    flex: 25%;
+    max-width: 25%;
+  }
+}
 
 
 	</style>
@@ -63,13 +99,37 @@
         <a href="video.html">Video</a>
         <a href="table.html">Table</a>
     </div>
-    <div class="wrapper">
-        <div><img src="images/18.jpg"alt="old club penguin" style="width:300px;" ></div>
-        <div><img src="images/futaba.jpg" alt="futaba morgana painting" style="width:300px;"></div>
-        <div><img src="images/wide dog.jpg" alt="wide dog birthday" style="width:300px;"></div>
-        <div><img src="images/me.jpg" alt="oc song sequence" style="width:300px;"></div>
-        <div><img src="images/cotton.png" alt="cotton hill soldier" style="width:300px;"></div>
-        <div><img src="images/sameface.jpg" alt="sameface guide" style="width:300px;"></div>
+    <div class="row"> 
+        <div class="column">
+            <img src="images/18.jpg"alt="old club penguin" style="width:100%;" >
+            <img src="images/futaba.jpg" alt="futaba morgana painting" style="width:100%;">
+            <img src="images/wide dog.jpg" alt="wide dog birthday" style="width:100%;">
+        </div>
+        <div class="column">
+            <img src="images/me.jpg" alt="oc song sequence" style="width:100%;">
+            <img src="images/cotton.png" alt="cotton hill soldier" style="width:100%;">
+            <img src="images/sameface.jpg" alt="sameface guide" style="width:100%;">
+        </div>
+        <div class="column">
+            <img src="images/18.jpg"alt="old club penguin" style="width:100%;" >
+            <img src="images/futaba.jpg" alt="futaba morgana painting" style="width:100%;">
+            <img src="images/wide dog.jpg" alt="wide dog birthday" style="width:100%;">
+        </div>
+        <div class="column">
+            <img src="images/me.jpg" alt="oc song sequence" style="width:100%;">
+            <img src="images/cotton.png" alt="cotton hill soldier" style="width:100%;">
+            <img src="images/sameface.jpg" alt="sameface guide" style="width:100%;">
+        </div>
+        <div class="column">
+            <img src="images/18.jpg"alt="old club penguin" style="width:100%;" >
+            <img src="images/futaba.jpg" alt="futaba morgana painting" style="width:100%;">
+            <img src="images/wide dog.jpg" alt="wide dog birthday" style="width:100%;">
+        </div>
+        <div class="column">
+            <img src="images/me.jpg" alt="oc song sequence" style="width:100%;">
+            <img src="images/cotton.png" alt="cotton hill soldier" style="width:100%;">
+            <img src="images/sameface.jpg" alt="sameface guide" style="width:100%;">
+        </div>
     </div> 
 
 </body>
